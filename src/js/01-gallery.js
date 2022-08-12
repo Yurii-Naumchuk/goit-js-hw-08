@@ -5,13 +5,10 @@ import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 function createImageGallery(itemList) {
-    return itemList.reduce((acc, item) => acc + 
-    `<a class="gallery__item" href="${item.original}">
-  <img class="gallery__image" src="${item.preview}" alt="${item.description}" />
-</a>`
-      , "");
-    };
-
+  return itemList.reduce((acc, item) => acc + 
+  `<div class="gallery__card"><a class="gallery__item" href="${item.original}">
+  <img class="gallery__image" src="${item.preview}" alt="${item.description}" /></a></div>`, "");
+  };
     const createImg = createImageGallery(galleryItems);
     const listGallery = document.querySelector(".gallery");
   
